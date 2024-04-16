@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+form {
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    /* Make image container for absolute positioning */
+}
+
+#imageContainer {
+    text-align: center;
+    position: relative;
+    /* Position relative for absolute positioning of text */
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.meme-text {
+    position: absolute;
+    /* Position absolutely for overlaying text */
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.top-text {
+    top: 10px;
+}
+
+.bottom-text {
+    bottom: 10px;
+}
+
+.meme-item {
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: 2px solid #000;
+    position: relative;
+    /* Position relative for absolute positioning of text */
+}
+
+.meme-item:hover {
+    border-color: #f00;
+}
