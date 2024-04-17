@@ -1,0 +1,57 @@
+Last login: Wed Apr 17 12:35:35 on ttys005
+drakeshepard@Drakes-MacBook-Pro ~ % mkdir learn_git_again
+drakeshepard@Drakes-MacBook-Pro ~ % cd learn_git_again
+drakeshepard@Drakes-MacBook-Pro learn_git_again % touch third.txt
+drakeshepard@Drakes-MacBook-Pro learn_git_again % git init      
+Initialized empty Git repository in /Users/drakeshepard/learn_git_again/.git/
+drakeshepard@Drakes-MacBook-Pro learn_git_again % git add third.txt
+drakeshepard@Drakes-MacBook-Pro learn_git_again % git commit -m “adding third.txt”
+error: pathspec 'third.txt”' did not match any file(s) known to git
+drakeshepard@Drakes-MacBook-Pro learn_git_again % git commit -m adding third.txt 
+[main (root-commit) 227a037] adding
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+drakeshepard@Drakes-MacBook-Pro learn_git_again % git log
+commit 227a037db207d2edc70334adb9bea535e36ca421 (HEAD -> main)
+Author: doctordrak3 <dabshepard@gmail.com>
+Date:   Wed Apr 17 15:14:35 2024 -0600
+
+    adding
+drakeshepard@Drakes-MacBook-Pro learn_git_again % touch fourth.txt
+drakeshepard@Drakes-MacBook-Pro learn_git_again % git add fourth.txt
+drakeshepard@Drakes-MacBook-Pro learn_git_again % git commit -m “adding fourth.txt”
+error: pathspec 'fourth.txt”' did not match any file(s) known to git
+drakeshepard@Drakes-MacBook-Pro learn_git_again % git commit -m adding fourth.txt  
+[main 5bfdcd5] adding
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+drakeshepard@Drakes-MacBook-Pro learn_git_again % rm third.txt
+drakeshepard@Drakes-MacBook-Pro learn_git_again % git commit -m removing third.txt  
+[main 284275c] removing
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+drakeshepard@Drakes-MacBook-Pro learn_git_again % git log
+commit 284275c66df797f54a590f16bef25a782e6119a8 (HEAD -> main)
+Author: doctordrak3 <dabshepard@gmail.com>
+Date:   Wed Apr 17 15:18:32 2024 -0600
+
+    removing
+
+commit 5bfdcd5ff04fbff58914a97a8a31fedc423f1ee1
+Author: doctordrak3 <dabshepard@gmail.com>
+Date:   Wed Apr 17 15:15:37 2024 -0600
+
+    adding
+
+commit 227a037db207d2edc70334adb9bea535e36ca421
+Author: doctordrak3 <dabshepard@gmail.com>
+Date:   Wed Apr 17 15:14:35 2024 -0600
+
+    adding
+drakeshepard@Drakes-MacBook-Pro learn_git_again % git config --global core.pager “dragon”
+drakeshepard@Drakes-MacBook-Pro learn_git_again % git config --global --list
+error: cannot run “dragon”: No such file or directory
+user.email=dabshepard@gmail.com
+user.name=doctordrak3
+core.pager=“dragon”
+drakeshepard@Drakes-MacBook-Pro learn_git_again % 
