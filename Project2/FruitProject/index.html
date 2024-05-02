@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fruit Autocomplete</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Add your own CSS file here if needed -->
+  <style>
+    /* Add your CSS styling here */
+    .suggestions {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      max-height: 100px;
+      /* Smaller dropdown */
+      overflow-y: auto;
+      width: calc(100% - 2px);
+    }
+
+    .suggestions ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .suggestions li {
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+
+    .suggestions li:hover {
+      background-color: #f4f4f4;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="search-container">
+    <input type="text" name="fruit" id="fruit" placeholder="Search fruit 🍎">
+    <div class="suggestions">
+      <ul></ul>
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById('fruit');
+    const suggestions = document.querySelector('.suggestions ul');
+
+    input.addEventListener('input', function () {
+      // Clear previous suggestions
+      suggestions.innerHTML = '';
+
+      // Get user input
+      const userInput = this.value.toLowerCase();
+
+      // List of fruits (for demonstration)
+      const fruits = ['apple', 'banana', 'orange', 'mango', 'pineapple', 'strawberry'];
+
+      // Filter fruits based on user input
+      const filteredFruits = fruits.filter(fruit => fruit.includes(userInput));
+
+      // Display filtered fruits as suggestions
+      if (filteredFruits.length > 0) {
+        suggestions.parentNode.style.display = 'block'; // Show suggestions
+        filteredFruits.forEach(fruit => {
+          const li = document.createElement('li');
+          li.textContent = fruit;
+          suggestions.appendChild(li);
+        });
+      } else {
+        suggestions.parentNode.style.display = 'none'; // Hide suggestions if no match
+      }
+    });
+
+    // Handle click on suggestions
+    suggestions.addEventListener('click', function (e) {
+      if (e.target.tagName === 'LI') {
+        input.value = e.target.textContent;
+        suggestions.parentNode.style.display = 'none'; // Hide suggestions on click
+      }
+    });
+
+    // Hide suggestions when clicking outside the input
+    document.addEventListener('click', function (e) {
+      if (e.target !== input && e.target !== suggestions) {
+        suggestions.parentNode.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>
